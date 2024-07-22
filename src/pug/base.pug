@@ -1,0 +1,38 @@
+-const sitePath = 'https://weblazum.ru/zaraysk/'
+//- -const sitePath = '/' 
+-let randomNumber = Math.round(100*Math.random())
+
+doctype html
+html(lang='ru')
+	block vars
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title= metaTitle
+		meta(name='description', content= metaDescription)
+		meta(name='robots', content='noindex, nofollow')
+		meta(property='og:title' content= metaTitle)
+		//- meta(property='og:description' content= metaDescription)
+		//- meta(property='og:image' content='img/cover-project.jpg')
+		link(href=`${sitePath}css/swiper-bundle.min.css?${randomNumber}`, rel='stylesheet')
+		//- link(href=`${sitePath}css/fancybox.css?${randomNumber}`, rel='stylesheet')
+		link(href=`${sitePath}css/style.css?${randomNumber}`, rel='stylesheet')
+		link(rel="apple-touch-icon" sizes="180x180" href=`${sitePath}img/favicon/apple-touch-icon.png`)
+		link(rel="icon" type="image/png" sizes="32x32" href=`${sitePath}img/favicon/favicon-32x32.png`)
+		link(rel="icon" type="image/png" sizes="16x16" href=`${sitePath}img/favicon/favicon-16x16.png`)
+		link(rel="manifest" href=`${sitePath}img/favicon/site.webmanifest`)
+		link(rel="mask-icon" href=`${sitePath}img/favicon/safari-pinned-tab.svg` color="#5bbad5")
+		<meta name="msapplication-TileColor" content="#ffc40d">
+		<meta name="theme-color" content="#ffffff">
+	body
+		.overlay
+		.wrapper
+			include parts/mixins
+			include header 
+			block content
+			include footer
+		script(src=`${sitePath}libs/swiper-bundle.min.js`)
+		//- script(src=`${sitePath}libs/fancybox.umd.js`)
+		//- script(src="https://api-maps.yandex.ru/2.1/?load=package.standard&lang=ru_RU&width=100%height=100%scroll=false")
+		script(src=`${sitePath}js/main.js`)

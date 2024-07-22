@@ -1,0 +1,32 @@
+extends ../base
+
+block vars
+	-let pageName = 'tours-page'
+	-let pageTitle = 'Экскурсии'
+	-let metaTitle = 'Экскурсии | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page.exhibitions-page
+			section.section.top
+				.top__current
+					.top__heading.container
+						+breadcrumps(pageTitle, 'Посетителям', 'visitors.html')
+						.top__name 
+							h1= pageTitle
+				a(href=`${sitePath}exhibitions.html`).top__next
+					div
+						span.btn.btn-link.btn-link--white Смотреть далее
+						p.h3 Выставки
+			section.events
+				+notice('Внимание!')
+					p В ОСЕННЕ-ЗИМНИЙ ПЕРИОД (НОЯБРЬ-МАРТ) ЭКСКУРСИИ ПО КРЕМЛЮ, ГОРОДУ, УСАДЬБЕ «ДАРОВОЕ» НАЧИНАЮТСЯ НЕ ПОЗДНЕЕ 15.30<br>В случае опоздания группы (прибытие после 15.30) экскурсия по территории Зарайского кремля проводится без подъема на крепостные стены.
+				.events__list
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 1')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 2')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 3')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 4')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 5')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 6')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 7')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 8')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 9')

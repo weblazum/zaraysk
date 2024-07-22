@@ -1,0 +1,183 @@
+mixin breadcrumps(currentPage, prevPage = false, prevLink = false)
+	.breadcrumps
+		a.breadcrumps__home.link.btn(href=`${sitePath}`) Главная
+		span.breadcrumps__separator.breadcrumps__separator--first
+		if (prevPage && prevLink)
+			a.breadcrumps__prev.link.btn(href=`${sitePath}${prevLink}`)= prevPage
+			span.breadcrumps__separator
+			span.breadcrumps__current= currentPage
+		else
+			span.breadcrumps__current= currentPage
+
+mixin picture(path, type = 'jpg', customClass = false, caption = false, loading = 'lazy')
+	figure
+		picture 
+			//- source(type="image/avif" srcset=`img/${path}.avif`)
+			//- source(type="image/webp" srcset=`img/${path}.webp`)
+			img(src=`${sitePath}img/${path}.${type}?${randomNumber}` alt="" loading=`${loading}` class= customClass)
+		if (caption)
+			figcaption
+				block
+
+mixin topSection(title, customClass = false, nextPage = false, nexttitle, nextlink)
+	section.section.top
+		.top__current
+			.top__heading.container
+				block
+				.top__name 
+					h1= title
+		if (nextPage)
+			a(href=`${sitePath}${nextlink}`).top__next
+				div
+					span.btn.btn-link.btn-link--white Смотреть далее
+					p.h3= nexttitle
+
+mixin gallery(location)
+	section.gallery
+		.gallery__container 
+			.gallery__heading.container
+				.gallery__title
+					h2.c-accent-1 Галерея
+				.gallery__filters.filters
+					.gallery__location.filters__item
+						svg.icon.icon-mark
+							use(xlink:href=`${sitePath}img/icons/icon-mark.svg#icon-mark`)
+						button.btn.btn-selected= location
+						span.separator 
+						span.btn.btn-choose Комплекс
+			.gallery__content
+				.swiper.slider
+					.swiper-wrapper 
+						block
+					.swiper-navigation.slider__navigation
+						button.btn.slider__navbutton.slider__navbutton--prev
+						.slider__pagination
+						button.btn.slider__navbutton.slider__navbutton--next
+							svg(viewbox="0 0 20 20")
+								circle(r="9" cx="10" cy="10" fill="none" stroke-width="1" stroke="#3B3A3D")
+				.swiper.slider-thumbs.container
+					.swiper-wrapper 
+						block
+
+mixin event-card(link, image, date, location, title)
+	a(href= link).events__item
+		.events__image
+			+picture(`${image}`)
+		.events__content
+			.events__date
+				svg.icon.icon-clock
+					use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`)
+				span= date
+			.events__location
+				svg.icon.icon-mark
+					use(xlink:href=`${sitePath}img/icons/icon-mark.svg#icon-mark`)
+				span= location
+			h4.events__title= title
+		.events__link
+			.btn.btn-primary Купить билет
+
+mixin banner-slide(cover = 'image-04', title = 'Абонементы', link = '#', image = 'decorate-13')
+	.swiper-slide.banner__item.slider__item
+		.banner__cover.slider__cover
+			+picture(`${cover}`)
+		.banner__content.sector-container.slider__content
+			.banner__text.slider__text
+				.banner__title.slider__title
+					h3= title
+				.banner__link.slider__link 
+					a.btn.btn-link(href=`${link}`) Подробнее
+			.banner__image.slider__image
+				+picture(`${image}`, 'png')
+
+mixin gallery-slide(pic, caption)
+	.swiper-slide.slider__item
+		.slider__cover
+			+picture(`${pic}`, 'jpg', false, true)
+				p= caption
+
+mixin historyItem(year, text, pic)
+	.history__item
+		.history__text
+			.history__year.c-accent-2= year
+			.history__description!= text.replace(/\n/g, '<br>')
+		.history__pic
+			+picture(`${pic}`, 'png')
+
+mixin faqItem(title, customClass)
+	li.accordeon-item(class=`${customClass}__item`)
+		button.accordeon-btn(class=`${customClass}__header`)= title
+		.toget__body.accordeon-body.user-content
+			block
+
+mixin notice(title)
+	section.section.notice 
+		.notice__container.container
+			.notice__inner
+				button.notice__close(aria-label="Закрыть", title="Закрыть")
+				.notice__title= title
+				.notice__text.user-content
+					block
+
+mixin ticketOffer(days, price)
+	.tickets__offer
+		.tickets__days
+			span= days
+		.tickets__price
+			span= price
+
+mixin ticketItem(title, duration, location, places)
+	li.tickets__item
+		.tickets__content
+			.tickets__name 
+				h4= title
+			.tickets__info
+				.tickets__duration
+					svg.icon.icon-clock.icon-accent
+						use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`)
+					span.c-accent-1= duration
+				.tickets__location
+					svg.icon.icon-mark.icon-accent
+						use(xlink:href=`${sitePath}img/icons/icon-mark.svg#icon-mark`)
+					span.c-accent-1= location
+				.tickets__places
+					svg.icon.icon-user.icon-accent
+						use(xlink:href=`${sitePath}img/icons/icon-user.svg#icon-user`)
+					span.c-accent-1= places
+		.tickets__prices
+			block
+
+mixin contentTextPic(title, image, caption, customClass = false)
+	section.section.content-section
+		.content-pictext
+			.content-leftcol
+				.content-header
+					h2= title
+				.content-image
+					+picture(`${image}`, 'jpg', false, true)
+						p= caption
+			.content-rightcol.user-content 
+				block 
+
+mixin contentBg(title, image, caption)
+	section.section.content-section
+		.content-bg
+			.content-wrapper
+				if (title)
+					.content-header
+						h2= title
+				.content-leftcol
+					.content-image
+						+picture(`${image}`, 'jpg', false, true)
+							p= caption
+				.content-rightcol.user-content 
+					block
+
+mixin contentBgAccent(title)
+	section.section.content-section
+		.content-bg.content-bg--accent
+			.content-wrapper
+				if (title)
+					.content-header
+						h2= title 
+				.content-width.user-content
+					block

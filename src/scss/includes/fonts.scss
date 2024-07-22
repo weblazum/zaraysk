@@ -1,0 +1,23 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+		font-display: swap;
+		src:
+			local("#{$font-family}"),
+			url("#{$file-path}.woff2") format("woff2"),
+			url("#{$file-path}.woff") format("woff");
+	}
+}
+
+@mixin font($header-font-size, $header-font-weight: $font-weight-base, $header-line-height: normal) {
+	font-size: $header-font-size;
+	font-weight: $header-font-weight;
+	line-height: $header-line-height;
+}
+
+@include font-face("GothamSSm", "../fonts/GothamSSm-Light", 300);
+@include font-face("GothamSSm", "../fonts/GothamSSm-Medium", 500);
+@include font-face("GothamSSm", "../fonts/GothamSSm-Bold", 700);
+@include font-face("Playfair", "../fonts/PlayfairDisplaySC-Bold", 700);

@@ -1,0 +1,15 @@
+extends ../base
+
+block vars
+	-let pageName = 'collections-page'
+	-let pageTitle = 'Коллекции'
+	-let metaTitle = 'Коллекции | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page(class= pageName)
+			+topSection(pageTitle, false, true, 'Музейный магазин', '#')
+				+breadcrumps(pageTitle)
+			br
+			br
+			include ../parts/seemore
+			include ../parts/toget

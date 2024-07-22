@@ -1,0 +1,33 @@
+extends ../base
+
+block vars
+	-let pageName = 'tickets-page'
+	-let pageTitle = 'Билеты'
+	-let metaTitle = 'Билеты | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page.exhibitions-page
+			section.section.top
+				.top__current
+					.top__heading.container
+						+breadcrumps(pageTitle, 'Посетителям', 'visitors.html')
+						.top__name 
+							h1= pageTitle
+				a(href=`${sitePath}tours.html`).top__next
+					div
+						span.btn.btn-link.btn-link--white Смотреть далее
+						p.h3 Экскурсии
+			+notice('Внимание!')
+				p Заказ экскурсий осуществляется со вторника по воскресенье!
+			section.section.tickets
+				.tickets__container.container
+					ul.tickets__list
+						+ticketItem('Сборные экскурсии по кремлю с подъемом на галерею', '1 час 30 минут', 'Зарайский кремль', 'до 10 человек')
+							+ticketOffer('ср, чт, пт', '350₽/чел.')
+							+ticketOffer('сб, вск, праздники', '200₽/чел.')
+						+ticketItem('Сборные экскурсии по экспозиции музея', '1 час 30 минут', 'Зарайский кремль', 'от 5 человек')
+							+ticketOffer('сб, вск, праздники', '250₽ + входная плата/чел. ')
+						+ticketItem('Сборные экскурсии по Музею-усадьбе Ф.М. Достоевского «Даровое»', '1 час 30 минут', 'Зарайский кремль', 'от 5 человек')
+							+ticketOffer('суббота', '200₽ + входная плата/чел. ')
+			include ../parts/seemore
+			include ../parts/toget

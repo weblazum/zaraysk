@@ -1,0 +1,41 @@
+header.header
+	.header__container.container 
+		.header__content 
+			a.header__logo.logo(href=`${sitePath}`)
+				svg.logo__icon
+					use(xlink:href=`${sitePath}img/logo.svg#logo`) 
+			nav.nav(aria-label="Меню")
+				ul.nav__list 
+					li.nav__item 
+						a.nav__link.link(href="#") Музей
+					li.nav__item 
+						if (pageName == 'visitors-page')
+							span.nav__link.link.nav__link--selected Посетителям
+						else
+							a.nav__link.link(href=`${sitePath}visitors.html`) Посетителям
+					li.nav__item 
+						a.nav__link.link(href="#") Коллекции
+					li.nav__item 
+						if (pageName == 'exhibitions-page')
+							span.nav__link.link.nav__link--selected Выставки
+						else
+							a.nav__link.link(href=`${sitePath}exhibitions.html`) Выставки
+					li.nav__item 
+						a.nav__link.link(href="#") Летопись
+					li.nav__item 
+						a.nav__link.link(href="#") События
+					li.nav__item 
+						a.nav__link.link(href="#") Контакты
+			.header__buttons 
+				a.header__button(href="#")
+					svg.logo__icon
+						use(xlink:href=`${sitePath}img/icons/icon-ticket.svg#icon-ticket`) 
+				a.header__button(href="#")
+					svg.logo__icon
+						use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`) 
+				button.header__button
+					svg.logo__icon
+						use(xlink:href=`${sitePath}img/icons/icon-eye.svg#icon-eye`)
+			//- button.burger(aria-label="Открыть меню")
+			//- 	svg(width="20" height="16")
+			//- 		use(xlink:href=``)

@@ -1,0 +1,96 @@
+// Цвета
+$c-accent-1: #d66744;
+$c-accent-2: #c6644b;
+$c-accent-3: #b26551;
+$c-accent-light: #f9ead3;
+$c-maintext: #3b3a3d;
+$c-secondarytext: #5f5d5e;
+$c-stroke: #e2ddd6;
+$c-white: #fbfaf9;
+$c-ochre: #c8a57d;
+$c-green: #beb99e;
+$c-background: #e9e6e1;
+
+// Шрифты
+$gotham: "GothamSSm", sans-serif;
+$playfair: "Playfair", sans-serif;
+
+// Макет
+$transition-base: 0.2s ease;
+$border-base: 1px solid grey;
+$p-clamp: clamp(1rem, 0.1964rem + 3.5714vw, 3.125rem);
+
+// Медиа-запросы
+$l-b: "max-width: 1400px";
+$l-m: "max-width: 1200px";
+$l-s: "max-width: 1024px";
+$t: "max-width: 860px";
+$p-b: "max-width: 567px";
+$p-m: "max-width: 480px";
+$p-s: "max-width: 360px";
+
+// Стили текста
+
+@mixin accent-txt-1 {
+	font-family: $gotham;
+	font-size: 62px;
+	font-weight: 500;
+}
+
+@mixin accent-txt-2 {
+	font-family: $playfair;
+	font-weight: 700;
+	font-size: 80px;
+	border-bottom: 2px solid $c-accent-1;
+}
+
+@mixin h1 {
+	font-family: $playfair;
+	font-weight: 700;
+	font-size: 50px;
+}
+
+@mixin h2 {
+	font-family: $playfair;
+	font-weight: 700;
+	font-size: 35px;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	text-decoration-thickness: 1px;
+}
+
+@mixin h3 {
+	font-family: $gotham;
+	font-weight: 500;
+	font-size: 30px;
+}
+
+@mixin h4 {
+	font-family: $gotham;
+	font-weight: 700;
+	font-size: 25px;
+}
+
+@mixin p1 {
+	font-family: $gotham;
+	font-weight: 300;
+	font-size: 25px;
+}
+
+@mixin p3 {
+	font-family: $gotham;
+	font-weight: 300;
+	font-size: 22px;
+}
+
+@mixin p4 {
+	font-family: $gotham;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+@mixin p5 {
+	font-family: $gotham;
+	font-weight: 300;
+	font-size: 16px;
+}

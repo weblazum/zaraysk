@@ -1,0 +1,51 @@
+extends ../base
+
+block vars
+	-let pageName = 'sitemap-page'
+	-let pageTitle = 'Карта сайта'
+	-let metaTitle = 'Карта сайта | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page
+			.container 	
+				.user-content
+					h2.c-accent-1 Навигация
+					br
+					h5 Объекты музея
+					br
+					ul
+						li
+							a(href=`${sitePath}kremlin.html` target="_blank") Зарайский кремль
+						li
+							a(href=`${sitePath}golubkina.html` target="_blank") Дом А.С. Голубкиной
+						li
+							a(href=`${sitePath}darovoe.html` target="_blank") Музей-усадьба Ф.М. Достоевского «Даровое»
+						li
+							a(href=`${sitePath}public.html` target="_blank") Присутственные места
+					br
+					h5 Посетителям
+					br
+					ul
+						li
+							a(href=`${sitePath}tours.html` target="_blank") Экскурсии (разводящая)
+						li
+							a(href=`${sitePath}tour-single.html` target="_blank") Экскурсия (шаблон)
+						li
+							a(href=`${sitePath}faq.html` target="_blank") Часто задаваемые вопросы
+						li
+							a(href=`${sitePath}tickets.html` target="_blank") Билеты
+					br
+					h5 Выставки
+					br
+					ul
+						li
+							a(href=`${sitePath}exhibitions.html` target="_blank") Выставки (разводящая)
+						li
+							a(href=`${sitePath}event-single.html` target="_blank") Выставка (шаблон)
+					h5 О музее
+					br
+					ul
+						li
+							a(href=`${sitePath}collections.html` target="_blank") Коллекции
+					br
+					br

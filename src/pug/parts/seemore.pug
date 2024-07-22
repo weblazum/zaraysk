@@ -1,0 +1,47 @@
+section.section.seemore
+	.seemore__container 
+		.seemore__heading 
+			.container 
+				h2.c-accent-1 Может быть интересно
+		.seemore__tablet.gtablet.gtablet-seemore
+			.gtablet__item.gtablet__item--w25.gtablet__item--empty
+			a(href=`${sitePath}collections.html`).gtablet__item.collection
+				.card.card-v2
+					.card__title 
+						| Коллекции
+					.card__bottom
+						span.link.btn-link.btn-link--white Подробнее
+			a(href=`${sitePath}tours.html`).gtablet__item.gtablet__item--w25.tours
+				.card.card-v2
+					.card__title 
+						| Экскурсии
+					.card__bottom
+						span.link.btn-link.btn-link--white Подробнее
+			a(href=`${sitePath}exhibitions.html`).gtablet__item.gtablet__item--w25.expositions
+				.card.card-v2
+					.card__image 
+						+picture('decorate-11', 'png')
+					.card__title 
+						| Экспозиции
+					.card__bottom
+						span.link.btn-link Подробнее
+			a(href=`${sitePath}kremlin.html`).gtablet__item.gtablet__item--w25.place-kremlin
+				.card.card-v1
+					.card__top
+						svg.icon.icon-lock
+							use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`) 
+						span Режим работы
+					.card__title 
+						| Зарайский кремль
+					.card__bottom
+						span.tag #музейный_комплекс
+					.card__cover 
+						+picture('decorate-05', 'png')
+			a(href="#").gtablet__item.subscriptions
+				.card.card-v2
+					.card__title 
+						| Абонементы
+					.card__bottom
+						span.link.btn-link.btn-link--black Подробнее
+					.card__cover 
+						+picture('decorate-13', 'png')

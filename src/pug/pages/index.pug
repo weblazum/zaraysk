@@ -1,0 +1,200 @@
+extends ../base
+
+block vars
+	-let pageName = 'front-page'
+	-let pageTitle = 'Зарайский кремль'
+	-let metaTitle = 'Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.front-page
+			section.gtablet.gtablet-front
+				.gtablet__item.slogan
+					.sector-container.sector-container--left
+						p
+							span Наши мамонты 
+							span не кусаются!
+						a.btn.btn-primary(href="#") Купить билет
+				.gtablet__item.mammoth-1
+					+picture('decorate-01', 'png')
+				.gtablet__item.mammoth-2
+					.sector-container.sector-container--left
+						+picture('decorate-02', 'png')
+				.gtablet__item.quote 
+					.sector-container.sector-container--right
+						blockquote
+							q Это <span>маленькое и&nbsp;незамечательное место</span> оставило <span>во&nbsp;мне самое</span> глубокое <span>и&nbsp;сильное</span> впечатление <span>на&nbsp;всю потом жизнь</span>
+							cite Ф. Достоевский
+				.gtablet__item.gosuslugi-form
+					.sector-container.sector-container--left
+						p Расскажите,<br>как музей может стать лучше?
+						a.btn.btn-filled(href="#") Написать
+				.gtablet__item.gosuslugi-pic.cover
+					+picture('gosuslugi-cover')
+				.gtablet__item.gosuslugi-disclaimer 	
+					.container
+						p Пилотный проект. Данная форма не предназначена для приема обращений граждан в порядке Федерального закона от 02.05.2006 № 59-ФЗ «О порядке рассмотрения обращений граждан Российской Федерации» и предоставляет возможность направить электронное сообщение в рамках реализации пилотного проекта по внедрению «Единого окна цифровой обратной связи». Ответ на сообщение будет направлен не позднее 8 рабочих дней после дня его регистрации, а по отдельным тематикам – в укороченные сроки.
+				a(href=`${sitePath}kremlin.html`).gtablet__item.gtablet__item--w25.place-kremlin
+					.card.card-v1
+						.card__top
+							svg.icon.icon-clock
+								use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`) 
+							span Режим работы
+						.card__title 
+							| Зарайский кремль
+						.card__bottom
+							span.tag #музейный_комплекс
+						.card__cover 
+							+picture('decorate-06', 'png')
+				a(href=`${sitePath}golubkina.html`).gtablet__item.gtablet__item--w25.place-golubkina
+					.card.card-v1
+						.card__top
+							svg.icon.icon-clock
+								use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`) 
+							span Режим работы
+						.card__title 
+							| Дом Голубкиной
+						.card__bottom
+							span.tag #музейный_комплекс
+						.card__cover 
+							+picture('decorate-03', 'png')
+				.gtablet__item.gtablet__item--bcenter
+					+picture('decorate-12', 'png')
+				.gtablet__item.gtablet__item--empty.gtablet__item--green
+					
+				a(href=`${sitePath}public.html`).gtablet__item.gtablet__item--w25.place-public
+					.card.card-v1
+						.card__top
+							svg.icon.icon-clock
+								use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`) 
+							span Режим работы
+						.card__title 
+							| Присутственные места
+						.card__bottom
+							span.tag #музейный_комплекс
+						.card__cover 
+							+picture('decorate-04', 'png')
+				a(href=`${sitePath}darovoe.html`).gtablet__item.gtablet__item--w25.place-darovoe
+					.card.card-v1
+						.card__top
+							svg.icon.icon-clock
+								use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`) 
+							span Режим работы
+						.card__title 
+							| Музей-усадьба «Даровое»
+						.card__bottom
+							span.tag #музейный_комплекс
+						.card__cover 
+							+picture('decorate-05', 'png')
+				a(href=`${sitePath}exhibitions.html`).gtablet__item.gtablet__item--w25.expositions
+					.card.card-v2
+						.card__image 
+							+picture('decorate-11', 'png')
+						.card__title 
+							| Экспозиции
+						.card__bottom
+							span.link.btn-link(href="#") Подробнее
+				.gtablet__item.cover
+					+picture('image-03')
+				a(href=`${sitePath}tours.html`).gtablet__item.gtablet__item--w25.tours
+					.card.card-v2
+						.card__title 
+							| Экскурсии
+						.card__bottom
+							span.link.btn-link.btn-link--white(href="#") Подробнее
+			section.events
+				.events__nav
+					.container
+						.events__filters.filters
+							.events__heading 
+								a(href=`${sitePath}events.html`).h2.c-accent-1 Афиша
+							.events__reset.filters__item
+								button.btn.btn-text Сброс фильтров
+							.events__dates.filters__item
+								svg.icon.icon-clock
+									use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`)
+								button.btn.btn-selected Ближайшие
+								span.separator
+								button.btn.btn-choose Дата
+							.events__locations.filters__item
+								svg.icon.icon-mark
+									use(xlink:href=`${sitePath}img/icons/icon-mark.svg#icon-mark`)
+								button.btn.btn-selected Дом голубкиной
+								span.separator
+								button.btn.btn-choose Комплекс
+							.events__ages.filters__item
+								svg.icon.icon-user
+									use(xlink:href=`${sitePath}img/icons/icon-user.svg#icon-user`)
+								button.btn.btn-selected 14+
+								span.separator
+								button.btn 6+
+								button.btn 12+
+								button.btn 18+
+							.events__groups.filters__item
+								button.btn.btn-selected Пушкинская карта
+								span.separator
+								button.btn.btn-selected Экскурсии
+								span.separator
+								button.btn Выставки
+								span.separator
+								button.btn Программы
+								span.separator
+								button.btn Лекции
+								span.separator
+								button.btn Интерактивные занятия
+
+				.events__list
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 1')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 2')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 3')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 4')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 5')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 6')
+				.events__more
+					.container
+						a.btn.btn-link(href=`${sitePath}events.html`) Ознакомиться с афишей
+			section.banner
+				.swiper.swiper-mainbanner.slider
+					.swiper-wrapper 
+						+banner-slide
+						+banner-slide
+						+banner-slide
+					.swiper-navigation.banner__navigation.slider__navigation
+						button.btn.banner__navbutton.banner__navbutton--prev.slider__navbutton.slider__navbutton--prev
+						.banner__pagination.slider__pagination
+						button.btn.banner__navbutton.banner__navbutton--next.slider__navbutton.slider__navbutton--next
+							<svg viewbox="0 0 20 20">
+								<circle r="9" cx="10" cy="10" fill="none" stroke-width="1" stroke="#3B3A3D"/>
+							</svg>
+			section.history
+				.history__top
+					.container
+						.history__heading
+							a(href=`${sitePath}history.html`).h2.c-accent-1 Лента времени
+							.history__pagination
+				.history__content
+					.swiper.swiper-history
+						.swiper-wrapper
+							.swiper-slide.history__slide(data-name="1528-1801")
+								+historyItem('1528', 'Князь Василий III приказал построить город каменной', 'history-pic-01')
+								+historyItem('1550', 'Зарайск посещает царь Иван IV Грозный', 'history-pic-02')
+								+historyItem('1681', 'Перестраивается Никольский собор в кремле', 'history-pic-03')
+								+historyItem('1533', 'Выехал князь помолитися', 'history-pic-04')
+								+historyItem('1608', 'Протопопом становится священник Дмитрий Леонтьев', 'history-pic-05')
+								+historyItem('1701', 'Князь Матвей Петрович Гагарин заложил церковь Вознесения ', 'history-pic-06')
+							.swiper-slide.history__slide(data-name="1831-1921")
+							.swiper-slide.history__slide(data-name="1923-1998")
+							.swiper-slide.history__slide(data-name="2001-2021")
+			section.partners
+				.container
+					.swiper.swiper-partners
+						.swiper-wrapper.partners__list
+							.swiper-slide.partners__item 
+								+picture('partner-mosreg', 'png')
+							.swiper-slide.partners__item 
+								+picture('partner-gosuslugi', 'png')
+							.swiper-slide.partners__item 
+								+picture('partner-travelers', 'png')
+							.swiper-slide.partners__item 
+								+picture('partner-granti', 'png')
+							.swiper-slide.partners__item 
+								+picture('partner-minkult', 'png')

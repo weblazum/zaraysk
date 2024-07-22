@@ -1,0 +1,79 @@
+extends ../base
+
+block vars
+	-let pageName = 'tour-page'
+	-let pageTitle = 'Обзорная экскурсия «Зарайский кремль – памятник русского оборонного зодчества»'
+	-let metaTitle = 'Обзорная экскурсия «Зарайский кремль – памятник русского оборонного зодчества» | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page.eventsingle-page
+			section.section.top
+				.top__current
+					.top__heading.container
+						+breadcrumps(pageTitle, 'Экскурсии', 'tours.html')
+						.top__name 
+							h2= pageTitle
+			section.section.event
+				.event__container 
+					.event__content 
+						.event__image
+							+picture('image-04')
+						.event__text
+							.event__announce 
+								p В сопровождении сотрудника музея вы можете подняться на галерею крепости, прикоснуться к стенам уникального памятника архитектуры постройки первой трети XVI века, познакомиться с его историей и удивительными легендами, дошедшими до нас из глубины веков. 
+							.event__info
+								.event__duration
+									svg.icon.icon-clock.icon-accent
+										use(xlink:href=`${sitePath}img/icons/icon-clock.svg#icon-clock`)
+									span 1 час 30 минут
+								.event__location
+									svg.icon.icon-mark.icon-accent
+										use(xlink:href=`${sitePath}img/icons/icon-mark.svg#icon-mark`)
+									span Зарайский кремль
+								.event__places
+									svg.icon.icon-user.icon-accent
+										use(xlink:href=`${sitePath}img/icons/icon-user.svg#icon-user`)
+									span до 10 человек
+							.event__ticket 
+								button.btn.btn-primary.btn-primary--accent Оставить заявку
+			section.section.timetable
+				.timetable__container.container
+					h2.timetable__heading.c-accent-1 Ближайшие мероприятия
+					.timetable__content 
+						ul.timetable__list
+							li.timetable__item
+								.timetable__row
+									.timetable__date 02 июля 2024 - Вторник
+									.timetable__time 14:00
+									.timetable__link
+										a(href="#").btn.btn-primary Купить билет
+								.timetable__row
+									.timetable__date 02 июля 2024 - Вторник
+									.timetable__time 18:00
+									.timetable__link
+										a(href="#").btn.btn-primary Купить билет
+							li.timetable__item
+								.timetable__row
+									.timetable__date 03 ИЮЛЯ 2024 - CРЕДА
+									.timetable__time 14:00
+									.timetable__link
+										a(href="#").btn.btn-primary Купить билет
+							li.timetable__item
+								.timetable__row
+									.timetable__date 04 ИЮЛЯ 2024 - ЧЕТВЕРГ
+									.timetable__time 14:00
+									.timetable__link
+										a(href="#").btn.btn-primary Купить билет
+								.timetable__row
+									.timetable__date 04 ИЮЛЯ 2024 - ЧЕТВЕРГ
+									.timetable__time 18:00
+									.timetable__link
+										a(href="#").btn.btn-primary Купить билет
+							li.timetable__item
+								.timetable__row
+									.timetable__date 05 ИЮЛЯ 2024 - ПЯТНИЦА
+									.timetable__time 14:00
+									.timetable__link
+										a(href="#").btn.btn-primary Купить билет
+			include ../parts/seemore
+			include ../parts/toget

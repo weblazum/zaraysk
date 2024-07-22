@@ -1,0 +1,39 @@
+extends ../base
+
+block vars
+	-let pageName = 'exhibitions-page'
+	-let pageTitle = 'Текущие выставки'
+	-let metaTitle = 'Выставки | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page.exhibitions-page
+			section.section.top
+				.top__current
+					.top__heading.container
+						+breadcrumps(pageTitle, 'Выставки', '#')
+						.top__name 
+							h1= pageTitle
+				a(href=`${sitePath}tours.html`).top__next
+					div
+						span.btn.btn-link.btn-link--white Смотреть далее
+						p.h3 Экскурсии
+			section.events 
+				ul.events__nav.pagenav
+					li.pagenav__item
+						button.pagenav__link Текущие выставки
+					li.pagenav__item
+						button.pagenav__link Прошедшие выставки
+					li.pagenav__item
+						button.pagenav__link Внешние выставки
+					li.pagenav__item
+						button.pagenav__link Постоянные экспозиции
+				.events__list
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 1')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 2')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 3')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 4')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 5')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 6')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 7')
+					+event-card(`${sitePath}event-single.html`, 'image-01', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 8')
+					+event-card(`${sitePath}event-single.html`, 'image-02', '29.05 2024 в 13:00', 'Дом голубкиной', 'Событие 9')

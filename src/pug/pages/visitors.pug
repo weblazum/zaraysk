@@ -1,0 +1,15 @@
+extends ../base
+
+block vars
+	-let pageName = 'visitors-page'
+	-let pageTitle = 'Посетителям'
+	-let metaTitle = 'Посетителям | Зарайский кремль'
+	-let metaDescription = ''
+block content
+		main.main.page.exhibitions-page
+			section.section.top
+				.top__current
+					.top__heading.container
+						+breadcrumps(pageTitle)
+						.top__name 
+							h1= pageTitle
